@@ -9,6 +9,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -22,13 +23,16 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.remember.ui.add_edit_recordatorio.AddEditRecordatorioScreen
+import com.example.remember.ui.home.HomeScreen
 import com.example.remember.ui.recordatorio_list.RecordatorioListScreen
 import com.example.remember.ui.theme.RememberTheme
 import com.example.remember.util.Rutas
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalFoundationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -39,7 +43,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     ReminderCreation(ViewModelReminderCreation())*/
-
+                //HomeScreen()
 
                 val navController = rememberNavController()
                 NavHost(
@@ -67,7 +71,7 @@ class MainActivity : ComponentActivity() {
                             navController.popBackStack()
                         })
                     }
-                }
+                } //
             }
         }
     }

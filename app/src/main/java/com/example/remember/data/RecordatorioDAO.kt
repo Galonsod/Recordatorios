@@ -24,8 +24,8 @@ interface RecordatorioDAO {
     @Query("SELECT * FROM recordatorio WHERE formattedTime = :formattedTime")
     suspend fun getRecordatorioByTime(formattedTime: String): Recordatorio?
 
-    /*@Query("SELECT * FROM recordatorio WHERE category = :category")
-    suspend fun getRecordatorioByCategory(category: String): Recordatorio?*/
+    //@Query("SELECT * FROM recordatorio WHERE category = :category")
+    //suspend fun getRecordatorioByCategory(category: String): Recordatorio?
 
     @Query("SELECT * FROM recordatorio WHERE progress = :progress")
     suspend fun getRecordatorioByProgress(progress: Boolean): Recordatorio?
